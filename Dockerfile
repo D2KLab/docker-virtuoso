@@ -28,7 +28,7 @@ RUN apk add --no-cache openssl py-pip && \
     ln -s /usr/local/virtuoso-opensource/var/lib/virtuoso/db /data
 
 COPY --from=builder /usr/local/virtuoso-opensource /usr/local/virtuoso-opensource
-COPY virtuoso.ini dump_nquads_procedure.sql clean-logs.sh virtuoso.sh /virtuoso/
+COPY virtuoso.ini dump_nquads_procedure.sql enable_cors.sql clean-logs.sh virtuoso.sh /virtuoso/
 
 WORKDIR /data
 EXPOSE 8890 1111
