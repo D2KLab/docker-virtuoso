@@ -11,7 +11,7 @@ COPY patch.diff /patch.diff
 
 # Install prerequisites, Download, Patch, compile and install
 RUN apk add --update git automake autoconf automake libtool bison flex gawk gperf openssl g++ openssl-dev make && \
-    git clone --single-branch --depth=1 ${VIRTUOSO_GIT_URL} ${VIRTUOSO_DIR} && \
+    git clone --branch ${VIRTUOSO_GIT_BRANCH} --single-branch ${VIRTUOSO_GIT_URL} ${VIRTUOSO_DIR} && \
     cd ${VIRTUOSO_DIR} && \
     git checkout ${VIRTUOSO_GIT_COMMIT} && \
     patch ${VIRTUOSO_DIR}/libsrc/Wi/sparql_io.sql < /patch.diff && \
