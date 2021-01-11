@@ -14,7 +14,7 @@ RUN apk add --update git automake autoconf automake libtool bison flex gawk gper
     git clone --branch ${VIRTUOSO_GIT_BRANCH} --single-branch ${VIRTUOSO_GIT_URL} ${VIRTUOSO_DIR} && \
     cd ${VIRTUOSO_DIR} && \
     git checkout ${VIRTUOSO_GIT_COMMIT} && \
-    patch ${VIRTUOSO_DIR}/libsrc/Wi/sparql_io.sql < /patch.diff && \
+    git apply /patch.diff && \
     ./autogen.sh && \
     CFLAGS="-O2 -m64" && export CFLAGS && \
     ./configure --disable-bpel-vad --enable-conductor-vad --enable-fct-vad --disable-dbpedia-vad --disable-demo-vad --disable-isparql-vad --disable-ods-vad --disable-sparqldemo-vad --disable-syncml-vad --disable-tutorial-vad --program-transform-name="s/isql/isql-v/" && \
