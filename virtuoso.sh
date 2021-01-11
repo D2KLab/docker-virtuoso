@@ -34,6 +34,9 @@ isql-v -U dba -P dba < /virtuoso/enable_cors.sql
 # Create dump_nquads procedure
 isql-v -U dba -P dba < /virtuoso/dump_nquads_procedure.sql
 
+# Install facet browser
+echo "vad_install('/usr/local/virtuoso-opensource/share/virtuoso/vad/fct_dav.vad');" | isql-v -U dba -P dba
+
 # Update dba password
 isql-v -U dba -P dba < /sql-query.sql
 
