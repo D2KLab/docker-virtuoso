@@ -1,5 +1,5 @@
 FROM alpine:3.8 AS builder
-MAINTAINER Data to Knowledge Virtual Lab 'd2klab-admin@eurecom.fr'
+LABEL maintainer="Data to Knowledge Virtual Lab <d2klab-admin@eurecom.fr>"
 
 # Environment variables
 ENV VIRTUOSO_GIT_URL https://github.com/openlink/virtuoso-opensource.git
