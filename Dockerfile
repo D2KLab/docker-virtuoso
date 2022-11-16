@@ -5,7 +5,7 @@ LABEL maintainer="Data to Knowledge Virtual Lab <d2klab-admin@eurecom.fr>"
 ENV VIRTUOSO_GIT_URL https://github.com/openlink/virtuoso-opensource.git
 ENV VIRTUOSO_DIR /virtuoso-opensource
 ENV VIRTUOSO_GIT_BRANCH develop/7
-ENV VIRTUOSO_GIT_COMMIT c67527f12746b1c9b6c61b83a85ef0adce364600
+ENV VIRTUOSO_GIT_COMMIT ab28163ff4286b8edb5390c5711aec98f0ab9e76
 
 COPY patch.diff /patch.diff
 
