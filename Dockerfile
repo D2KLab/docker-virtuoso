@@ -5,7 +5,7 @@ LABEL maintainer="Data to Knowledge Virtual Lab <d2klab-admin@eurecom.fr>"
 ENV VIRTUOSO_GIT_URL=https://github.com/openlink/virtuoso-opensource.git
 ENV VIRTUOSO_DIR=/virtuoso-opensource
 ENV VIRTUOSO_GIT_BRANCH=develop/7
-ENV VIRTUOSO_GIT_COMMIT a1fd8195bf1140797fefb7d0961c55739c0dd0d8
+ENV VIRTUOSO_GIT_COMMIT=a1fd8195bf1140797fefb7d0961c55739c0dd0d8
 
 COPY patch.diff /patch.diff
 
@@ -23,7 +23,7 @@ RUN make -j $(grep -c '^processor' /proc/cpuinfo) install
 
 # Final image
 FROM alpine:3.8
-ENV PATH /usr/local/virtuoso-opensource/bin/:$PATH
+ENV PATH=/usr/local/virtuoso-opensource/bin/:$PATH
 RUN apk add --no-cache openssl py-pip
 RUN pip install crudini
 RUN mkdir -p /usr/local/virtuoso-opensource/var/lib/virtuoso/db
