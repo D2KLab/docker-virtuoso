@@ -2,9 +2,9 @@ FROM alpine:3.8 AS builder
 LABEL maintainer="Data to Knowledge Virtual Lab <d2klab-admin@eurecom.fr>"
 
 # Environment variables
-ENV VIRTUOSO_GIT_URL https://github.com/openlink/virtuoso-opensource.git
-ENV VIRTUOSO_DIR /virtuoso-opensource
-ENV VIRTUOSO_GIT_BRANCH develop/7
+ENV VIRTUOSO_GIT_URL=https://github.com/openlink/virtuoso-opensource.git
+ENV VIRTUOSO_DIR=/virtuoso-opensource
+ENV VIRTUOSO_GIT_BRANCH=develop/7
 ENV VIRTUOSO_GIT_COMMIT a1fd8195bf1140797fefb7d0961c55739c0dd0d8
 
 COPY patch.diff /patch.diff
@@ -35,4 +35,4 @@ COPY virtuoso.ini dump_nquads_procedure.sql enable_cors.sql clean-logs.sh virtuo
 WORKDIR /data
 EXPOSE 8890 1111
 
-CMD sh /virtuoso/virtuoso.sh
+CMD ["sh", "/virtuoso/virtuoso.sh"]
