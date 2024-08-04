@@ -10,7 +10,7 @@ ENV VIRTUOSO_GIT_COMMIT a1fd8195bf1140797fefb7d0961c55739c0dd0d8
 COPY patch.diff /patch.diff
 
 # Install prerequisites, Download, Patch, compile and install
-RUN apk add --update git automake autoconf automake libtool bison flex gawk gperf openssl g++ openssl-dev make && \
+RUN apk add --update git automake autoconf automake libtool bison flex gawk gperf openssl g++ openssl-dev make python && \
     git clone --branch ${VIRTUOSO_GIT_BRANCH} --single-branch ${VIRTUOSO_GIT_URL} ${VIRTUOSO_DIR} && \
     cd ${VIRTUOSO_DIR} && \
     git checkout ${VIRTUOSO_GIT_COMMIT} && \
